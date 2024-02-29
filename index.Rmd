@@ -1,21 +1,27 @@
 --- 
-title: "Entrega"
-author: "Laura Montaldo"
+title: "Estadística para datos extremales"
+author: "CURE-MEDIA"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
-documentclass: book
+documentclass: 
+  book:
+    latex_engine: xelatex
+    keep_tex: true
+    includes:
+      in_header: header2.tex
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "Este es un resumen de las notas de clase"
 lang: es
+cover-image: "logoMEDIA.jpeg"
 ---
 
 # Instalaciones
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+
 
 The **bookdown** package can be installed from CRAN or Github:
 
@@ -35,3 +41,27 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+
+```{r include=FALSE}
+if (!require(patchwork)) {
+    install.packages("patchwork")
+}
+library(evd)
+if (!require(evd)) {
+    install.packages("evd")
+}
+if (!require(lubridate)) {
+    install.packages("lubridate")
+}
+library(lubridate)
+if (!require(dplyr)) {
+    install.packages("dplyr")
+}
+library(dplyr)
+if (!require(ggplot2)) {
+    install.packages("ggplot2")
+}
+library(ggplot2)
+```
+
